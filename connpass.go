@@ -46,6 +46,7 @@ import (
 	"net/url"
 	"strconv"
 	"strings"
+	"time"
 )
 
 // BaseUrl is the base URL of the API (See https://connpass.com/about/api/)
@@ -61,26 +62,26 @@ type ResultSet struct {
 
 // Event specifies an event on connpass.
 type Event struct {
-	Id            int    `json:"event_id"`
-	Title         string `json:"title"`
-	Catch         string `json:"catch"`
-	Description   string `json:"description"`
-	Url           string `json:"event_url"`
-	Tag           string `json:"hash_tag"`
-	Start         string `json:"started_at"`
-	End           string `json:"ended_at"`
-	Limit         int    `json:"limit"`
-	Etype         string `json:"event_type"`
-	Address       string `json:"address"`
-	Place         string `json:"place"`
-	Lat           string `json:"lat"`
-	Lon           string `json:"lon"`
-	OwnerID       int    `json:"owner_id"`
-	OwnerNickname string `json:"owner_nickname"`
-	OwnerName     string `json:"owner_display_name"`
-	Accepted      int    `json:"accepted"`
-	Waiting       int    `json:"waiting"`
-	Updated       string `json:"updated_at"`
+	Id            int       `json:"event_id"`
+	Title         string    `json:"title"`
+	Catch         string    `json:"catch"`
+	Description   string    `json:"description"`
+	Url           string    `json:"event_url"`
+	Tag           string    `json:"hash_tag"`
+	Start         time.Time `json:"started_at"`
+	End           time.Time `json:"ended_at"`
+	Limit         int       `json:"limit"`
+	Etype         string    `json:"event_type"`
+	Address       string    `json:"address"`
+	Place         string    `json:"place"`
+	Lat           string    `json:"lat"`
+	Lon           string    `json:"lon"`
+	OwnerID       int       `json:"owner_id"`
+	OwnerNickname string    `json:"owner_nickname"`
+	OwnerName     string    `json:"owner_display_name"`
+	Accepted      int       `json:"accepted"`
+	Waiting       int       `json:"waiting"`
+	Updated       string    `json:"updated_at"`
 }
 
 // Order specifies how the returned events should be sorted.
